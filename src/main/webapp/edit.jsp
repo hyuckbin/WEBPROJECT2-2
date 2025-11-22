@@ -1,28 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="org.example.com.crud.dao.BoardDAO, org.example.com.crud.bean.BoardVO"%>
 
-<%
-    // 1. 수정할 글 번호 받기
-    String id = request.getParameter("id");
+<jsp:include page="header.jsp" />
 
-    // 2. DB에서 해당 글 정보 가져오기
+<%
+    String id = request.getParameter("id");
     BoardDAO boardDAO = new BoardDAO();
     BoardVO u = boardDAO.getBoard(Integer.parseInt(id));
 %>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>게시글 수정</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <style>
-        .write-container { margin-top: 50px; max-width: 800px; }
-    </style>
-</head>
-<body>
-
-<div class="container write-container">
+<div class="container">
     <h3 class="text-center mb-4">📝 게시글 수정</h3>
 
     <form action="edit_ok.jsp" method="post">
@@ -50,5 +37,4 @@
     </form>
 </div>
 
-</body>
-</html>
+<jsp:include page="footer.jsp" />

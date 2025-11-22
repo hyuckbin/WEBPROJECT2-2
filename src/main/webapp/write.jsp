@@ -1,18 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>새 글 작성</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <style>
-        .write-container { margin-top: 50px; max-width: 800px; }
-    </style>
-</head>
-<body>
 
-<div class="container write-container">
-    <h3 class="text-center mb-4"> 새 글 작성</h3>
+<jsp:include page="header.jsp" />
+
+<div class="container">
+    <h3 class="text-center mb-4">✏️ 새 글 작성</h3>
 
     <form action="write_ok.jsp" method="post">
         <div class="form-group">
@@ -37,5 +28,4 @@
     </form>
 </div>
 
-</body>
-</html>
+<jsp:include page="footer.jsp" />
